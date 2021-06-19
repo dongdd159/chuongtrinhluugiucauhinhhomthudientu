@@ -1,0 +1,10 @@
+model/EmailConfig.java
+ model.EmailConfig
+configuration/AppInitializer.java
+ configuration.AppInitializer
+service/EmailConfigService.java
+ service.EmailConfigService
+configuration/AppConfiguration.java
+ configuration.AppConfiguration
+controller/EmailConfigController.java
+ controller.EmailConfigController

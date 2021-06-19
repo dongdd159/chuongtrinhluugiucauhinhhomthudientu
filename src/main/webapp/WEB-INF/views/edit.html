@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit customer</title>
+</head>
+<body>
+<h1>Update Email Configuration</h1>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form th:action="@{/edit}" th:object="${emailconfig}" method="post">
+    <table>
+        <tr>
+            <td>Languages:</td>
+            <td>
+                <select th:field="*{language}">
+                    <option th:value="'English'" th:text="English"></option>
+                    <option th:value="'Vietnamese'" th:text="Vietnamese"></option>
+                    <option th:value="'Japanese'" th:text="Japanese"></option>
+                    <option th:value="'Chinese'" th:text="Chinese"></option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Page Size:</td>
+            <td>
+                Show
+                <select th:field="*{size}">
+                    <option th:value="5" th:text="5"></option>
+                    <option th:value="10" th:text="10"></option>
+                    <option th:value="15" th:text="15"></option>
+                    <option th:value="25" th:text="25"></option>
+                    <option th:value="50" th:text="50"></option>
+                    <option th:value="100" th:text="100"></option>
+                </select>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Spam filter:</td>
+            <td><input type="checkbox" name="filter" th:checked="*{filter}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Signature:</td>
+            <td><input type="text" th:field="*{signature}"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="action" value="Update"></td>
+            <td><input type="submit" name="action" value="Cancel"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

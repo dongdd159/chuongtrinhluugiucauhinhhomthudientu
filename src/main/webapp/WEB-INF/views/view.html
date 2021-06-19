@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete customer</title>
+</head>
+<body>
+<h1>Email Configuration</h1>
+<form th:action="@{/edit}" th:object="${emailconfig}">
+  <table>
+    <tr>
+      <td>Languages:</td>
+      <td th:text="${emailconfig.language}"></td>
+    </tr>
+    <tr>
+      <td>Page Size:</td>
+      <td th:text="${emailconfig.size}"></td>
+    </tr>
+    <tr>
+      <td>Spam filter:</td>
+      <td>
+        <span th:if="${emailconfig.filter}">ACTIVE</span>
+        <span th:unless="${emailconfig.filter}">DISABLE</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Signature:</td>
+      <td th:text="${emailconfig.signature}"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Update"></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
